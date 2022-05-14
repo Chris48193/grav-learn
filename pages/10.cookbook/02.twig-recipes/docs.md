@@ -371,9 +371,9 @@ Lastly if you want this to be available via a function and not just a filter, yo
 
 [prism classes="language-php line-numbers"]
     /**
-     * @param Event $e
+     * Registers the different filters/functions upon onTwigInitialized event
      */
-    public function onTwigInitialized(Event $e)
+    public function onTwigInitialized()
     {
         $this->grav['twig']->twig()->addFilter(
             new \Twig_SimpleFilter('chunker', [$this, 'chunkString'])
